@@ -13,6 +13,41 @@
 		BADBE1BE2B737EA0000DCC36 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BADBE1BC2B737EA0000DCC36 /* Main.storyboard */; };
 		BADBE1C02B737EA2000DCC36 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BADBE1BF2B737EA2000DCC36 /* Assets.xcassets */; };
 		BADBE1C32B737EA2000DCC36 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BADBE1C12B737EA2000DCC36 /* LaunchScreen.storyboard */; };
+		BADBE1DC2B7382A4000DCC36 /* LoginContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADBE1D72B7382A4000DCC36 /* LoginContract.swift */; };
+		BADBE1DD2B7382A4000DCC36 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADBE1D82B7382A4000DCC36 /* LoginPresenter.swift */; };
+		BADBE1DE2B7382A4000DCC36 /* LoginRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADBE1D92B7382A4000DCC36 /* LoginRouter.swift */; };
+		BADBE1DF2B7382A4000DCC36 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADBE1DA2B7382A4000DCC36 /* LoginViewController.swift */; };
+		BADBE1E02B7382A4000DCC36 /* LoginInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADBE1DB2B7382A4000DCC36 /* LoginInteractor.swift */; };
+		BADBE1E62B739AD3000DCC36 /* RegisterContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADBE1E12B739AD3000DCC36 /* RegisterContract.swift */; };
+		BADBE1E72B739AD3000DCC36 /* RegisterPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADBE1E22B739AD3000DCC36 /* RegisterPresenter.swift */; };
+		BADBE1E82B739AD3000DCC36 /* RegisterRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADBE1E32B739AD3000DCC36 /* RegisterRouter.swift */; };
+		BADBE1E92B739AD3000DCC36 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADBE1E42B739AD3000DCC36 /* RegisterViewController.swift */; };
+		BADBE1EA2B739AD3000DCC36 /* RegisterInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADBE1E52B739AD3000DCC36 /* RegisterInteractor.swift */; };
+		BADBE1F02B739AE3000DCC36 /* ListContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADBE1EB2B739AE3000DCC36 /* ListContract.swift */; };
+		BADBE1F12B739AE3000DCC36 /* ListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADBE1EC2B739AE3000DCC36 /* ListPresenter.swift */; };
+		BADBE1F22B739AE3000DCC36 /* ListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADBE1ED2B739AE3000DCC36 /* ListRouter.swift */; };
+		BADBE1F32B739AE3000DCC36 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADBE1EE2B739AE3000DCC36 /* ListViewController.swift */; };
+		BADBE1F42B739AE3000DCC36 /* ListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADBE1EF2B739AE3000DCC36 /* ListInteractor.swift */; };
+		BADBE1FA2B739AF0000DCC36 /* MapContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADBE1F52B739AF0000DCC36 /* MapContract.swift */; };
+		BADBE1FB2B739AF0000DCC36 /* MapPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADBE1F62B739AF0000DCC36 /* MapPresenter.swift */; };
+		BADBE1FC2B739AF0000DCC36 /* MapRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADBE1F72B739AF0000DCC36 /* MapRouter.swift */; };
+		BADBE1FD2B739AF0000DCC36 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADBE1F82B739AF0000DCC36 /* MapViewController.swift */; };
+		BADBE1FE2B739AF0000DCC36 /* MapInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADBE1F92B739AF0000DCC36 /* MapInteractor.swift */; };
+		BADBE2042B739AFF000DCC36 /* MenuContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADBE1FF2B739AFF000DCC36 /* MenuContract.swift */; };
+		BADBE2052B739AFF000DCC36 /* MenuPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADBE2002B739AFF000DCC36 /* MenuPresenter.swift */; };
+		BADBE2062B739AFF000DCC36 /* MenuRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADBE2012B739AFF000DCC36 /* MenuRouter.swift */; };
+		BADBE2072B739AFF000DCC36 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADBE2022B739AFF000DCC36 /* MenuViewController.swift */; };
+		BADBE2082B739AFF000DCC36 /* MenuInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADBE2032B739AFF000DCC36 /* MenuInteractor.swift */; };
+		BADBE20E2B739B0B000DCC36 /* PayContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADBE2092B739B0B000DCC36 /* PayContract.swift */; };
+		BADBE20F2B739B0B000DCC36 /* PayPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADBE20A2B739B0B000DCC36 /* PayPresenter.swift */; };
+		BADBE2102B739B0B000DCC36 /* PayRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADBE20B2B739B0B000DCC36 /* PayRouter.swift */; };
+		BADBE2112B739B0B000DCC36 /* PayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADBE20C2B739B0B000DCC36 /* PayViewController.swift */; };
+		BADBE2122B739B0B000DCC36 /* PayInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADBE20D2B739B0B000DCC36 /* PayInteractor.swift */; };
+		BADBE2142B739B43000DCC36 /* TokenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADBE2132B739B43000DCC36 /* TokenModel.swift */; };
+		BADBE2162B739B7D000DCC36 /* MenuModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADBE2152B739B7D000DCC36 /* MenuModel.swift */; };
+		BADBE2182B739B98000DCC36 /* LocationsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADBE2172B739B98000DCC36 /* LocationsModel.swift */; };
+		BADBE21A2B739BB5000DCC36 /* LocPointModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADBE2192B739BB5000DCC36 /* LocPointModel.swift */; };
+		BADBE21C2B739BDB000DCC36 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADBE21B2B739BDB000DCC36 /* Network.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +59,41 @@
 		BADBE1BF2B737EA2000DCC36 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BADBE1C22B737EA2000DCC36 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BADBE1C42B737EA2000DCC36 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BADBE1D72B7382A4000DCC36 /* LoginContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginContract.swift; sourceTree = "<group>"; };
+		BADBE1D82B7382A4000DCC36 /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
+		BADBE1D92B7382A4000DCC36 /* LoginRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRouter.swift; sourceTree = "<group>"; };
+		BADBE1DA2B7382A4000DCC36 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		BADBE1DB2B7382A4000DCC36 /* LoginInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInteractor.swift; sourceTree = "<group>"; };
+		BADBE1E12B739AD3000DCC36 /* RegisterContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterContract.swift; sourceTree = "<group>"; };
+		BADBE1E22B739AD3000DCC36 /* RegisterPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPresenter.swift; sourceTree = "<group>"; };
+		BADBE1E32B739AD3000DCC36 /* RegisterRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterRouter.swift; sourceTree = "<group>"; };
+		BADBE1E42B739AD3000DCC36 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		BADBE1E52B739AD3000DCC36 /* RegisterInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterInteractor.swift; sourceTree = "<group>"; };
+		BADBE1EB2B739AE3000DCC36 /* ListContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListContract.swift; sourceTree = "<group>"; };
+		BADBE1EC2B739AE3000DCC36 /* ListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListPresenter.swift; sourceTree = "<group>"; };
+		BADBE1ED2B739AE3000DCC36 /* ListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRouter.swift; sourceTree = "<group>"; };
+		BADBE1EE2B739AE3000DCC36 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
+		BADBE1EF2B739AE3000DCC36 /* ListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListInteractor.swift; sourceTree = "<group>"; };
+		BADBE1F52B739AF0000DCC36 /* MapContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapContract.swift; sourceTree = "<group>"; };
+		BADBE1F62B739AF0000DCC36 /* MapPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPresenter.swift; sourceTree = "<group>"; };
+		BADBE1F72B739AF0000DCC36 /* MapRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapRouter.swift; sourceTree = "<group>"; };
+		BADBE1F82B739AF0000DCC36 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		BADBE1F92B739AF0000DCC36 /* MapInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapInteractor.swift; sourceTree = "<group>"; };
+		BADBE1FF2B739AFF000DCC36 /* MenuContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuContract.swift; sourceTree = "<group>"; };
+		BADBE2002B739AFF000DCC36 /* MenuPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuPresenter.swift; sourceTree = "<group>"; };
+		BADBE2012B739AFF000DCC36 /* MenuRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuRouter.swift; sourceTree = "<group>"; };
+		BADBE2022B739AFF000DCC36 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		BADBE2032B739AFF000DCC36 /* MenuInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuInteractor.swift; sourceTree = "<group>"; };
+		BADBE2092B739B0B000DCC36 /* PayContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayContract.swift; sourceTree = "<group>"; };
+		BADBE20A2B739B0B000DCC36 /* PayPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayPresenter.swift; sourceTree = "<group>"; };
+		BADBE20B2B739B0B000DCC36 /* PayRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayRouter.swift; sourceTree = "<group>"; };
+		BADBE20C2B739B0B000DCC36 /* PayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayViewController.swift; sourceTree = "<group>"; };
+		BADBE20D2B739B0B000DCC36 /* PayInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayInteractor.swift; sourceTree = "<group>"; };
+		BADBE2132B739B43000DCC36 /* TokenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenModel.swift; sourceTree = "<group>"; };
+		BADBE2152B739B7D000DCC36 /* MenuModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuModel.swift; sourceTree = "<group>"; };
+		BADBE2172B739B98000DCC36 /* LocationsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsModel.swift; sourceTree = "<group>"; };
+		BADBE2192B739BB5000DCC36 /* LocPointModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocPointModel.swift; sourceTree = "<group>"; };
+		BADBE21B2B739BDB000DCC36 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +126,154 @@
 		BADBE1B52B737EA0000DCC36 /* sw_test */ = {
 			isa = PBXGroup;
 			children = (
-				BADBE1B62B737EA0000DCC36 /* AppDelegate.swift */,
-				BADBE1B82B737EA0000DCC36 /* SceneDelegate.swift */,
+				BADBE1CB2B737EF4000DCC36 /* Source */,
+				BADBE1CA2B737EE6000DCC36 /* Resources */,
 				BADBE1BA2B737EA0000DCC36 /* ViewController.swift */,
-				BADBE1BC2B737EA0000DCC36 /* Main.storyboard */,
+			);
+			path = sw_test;
+			sourceTree = "<group>";
+		};
+		BADBE1CA2B737EE6000DCC36 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
 				BADBE1BF2B737EA2000DCC36 /* Assets.xcassets */,
+				BADBE1BC2B737EA0000DCC36 /* Main.storyboard */,
 				BADBE1C12B737EA2000DCC36 /* LaunchScreen.storyboard */,
 				BADBE1C42B737EA2000DCC36 /* Info.plist */,
 			);
-			path = sw_test;
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		BADBE1CB2B737EF4000DCC36 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				BADBE1CF2B737F10000DCC36 /* Services */,
+				BADBE1CE2B737F09000DCC36 /* Modules */,
+				BADBE1CD2B737F01000DCC36 /* Models */,
+				BADBE1CC2B737EFB000DCC36 /* App */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		BADBE1CC2B737EFB000DCC36 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				BADBE1B62B737EA0000DCC36 /* AppDelegate.swift */,
+				BADBE1B82B737EA0000DCC36 /* SceneDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		BADBE1CD2B737F01000DCC36 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				BADBE2132B739B43000DCC36 /* TokenModel.swift */,
+				BADBE2152B739B7D000DCC36 /* MenuModel.swift */,
+				BADBE2172B739B98000DCC36 /* LocationsModel.swift */,
+				BADBE2192B739BB5000DCC36 /* LocPointModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		BADBE1CE2B737F09000DCC36 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				BADBE1D42B737F79000DCC36 /* Pay */,
+				BADBE1D32B737F6B000DCC36 /* Menu */,
+				BADBE1D22B737F65000DCC36 /* Map */,
+				BADBE1D12B737F5C000DCC36 /* List */,
+				BADBE1D02B737F54000DCC36 /* Auth */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		BADBE1CF2B737F10000DCC36 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				BADBE21B2B739BDB000DCC36 /* Network.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		BADBE1D02B737F54000DCC36 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				BADBE1D62B737FA2000DCC36 /* Register */,
+				BADBE1D52B737F95000DCC36 /* Login */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		BADBE1D12B737F5C000DCC36 /* List */ = {
+			isa = PBXGroup;
+			children = (
+				BADBE1EB2B739AE3000DCC36 /* ListContract.swift */,
+				BADBE1EC2B739AE3000DCC36 /* ListPresenter.swift */,
+				BADBE1ED2B739AE3000DCC36 /* ListRouter.swift */,
+				BADBE1EE2B739AE3000DCC36 /* ListViewController.swift */,
+				BADBE1EF2B739AE3000DCC36 /* ListInteractor.swift */,
+			);
+			path = List;
+			sourceTree = "<group>";
+		};
+		BADBE1D22B737F65000DCC36 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				BADBE1F52B739AF0000DCC36 /* MapContract.swift */,
+				BADBE1F62B739AF0000DCC36 /* MapPresenter.swift */,
+				BADBE1F72B739AF0000DCC36 /* MapRouter.swift */,
+				BADBE1F82B739AF0000DCC36 /* MapViewController.swift */,
+				BADBE1F92B739AF0000DCC36 /* MapInteractor.swift */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
+		BADBE1D32B737F6B000DCC36 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				BADBE1FF2B739AFF000DCC36 /* MenuContract.swift */,
+				BADBE2002B739AFF000DCC36 /* MenuPresenter.swift */,
+				BADBE2012B739AFF000DCC36 /* MenuRouter.swift */,
+				BADBE2022B739AFF000DCC36 /* MenuViewController.swift */,
+				BADBE2032B739AFF000DCC36 /* MenuInteractor.swift */,
+			);
+			path = Menu;
+			sourceTree = "<group>";
+		};
+		BADBE1D42B737F79000DCC36 /* Pay */ = {
+			isa = PBXGroup;
+			children = (
+				BADBE2092B739B0B000DCC36 /* PayContract.swift */,
+				BADBE20A2B739B0B000DCC36 /* PayPresenter.swift */,
+				BADBE20B2B739B0B000DCC36 /* PayRouter.swift */,
+				BADBE20C2B739B0B000DCC36 /* PayViewController.swift */,
+				BADBE20D2B739B0B000DCC36 /* PayInteractor.swift */,
+			);
+			path = Pay;
+			sourceTree = "<group>";
+		};
+		BADBE1D52B737F95000DCC36 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				BADBE1D72B7382A4000DCC36 /* LoginContract.swift */,
+				BADBE1D82B7382A4000DCC36 /* LoginPresenter.swift */,
+				BADBE1D92B7382A4000DCC36 /* LoginRouter.swift */,
+				BADBE1DA2B7382A4000DCC36 /* LoginViewController.swift */,
+				BADBE1DB2B7382A4000DCC36 /* LoginInteractor.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		BADBE1D62B737FA2000DCC36 /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				BADBE1E12B739AD3000DCC36 /* RegisterContract.swift */,
+				BADBE1E22B739AD3000DCC36 /* RegisterPresenter.swift */,
+				BADBE1E32B739AD3000DCC36 /* RegisterRouter.swift */,
+				BADBE1E42B739AD3000DCC36 /* RegisterViewController.swift */,
+				BADBE1E52B739AD3000DCC36 /* RegisterInteractor.swift */,
+			);
+			path = Register;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,9 +347,44 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BADBE2042B739AFF000DCC36 /* MenuContract.swift in Sources */,
+				BADBE2102B739B0B000DCC36 /* PayRouter.swift in Sources */,
+				BADBE1F32B739AE3000DCC36 /* ListViewController.swift in Sources */,
+				BADBE1DF2B7382A4000DCC36 /* LoginViewController.swift in Sources */,
 				BADBE1BB2B737EA0000DCC36 /* ViewController.swift in Sources */,
+				BADBE21A2B739BB5000DCC36 /* LocPointModel.swift in Sources */,
+				BADBE1DC2B7382A4000DCC36 /* LoginContract.swift in Sources */,
+				BADBE2062B739AFF000DCC36 /* MenuRouter.swift in Sources */,
+				BADBE1E92B739AD3000DCC36 /* RegisterViewController.swift in Sources */,
+				BADBE2182B739B98000DCC36 /* LocationsModel.swift in Sources */,
+				BADBE2082B739AFF000DCC36 /* MenuInteractor.swift in Sources */,
+				BADBE20E2B739B0B000DCC36 /* PayContract.swift in Sources */,
+				BADBE21C2B739BDB000DCC36 /* Network.swift in Sources */,
+				BADBE1DE2B7382A4000DCC36 /* LoginRouter.swift in Sources */,
+				BADBE2142B739B43000DCC36 /* TokenModel.swift in Sources */,
+				BADBE1E82B739AD3000DCC36 /* RegisterRouter.swift in Sources */,
+				BADBE1FB2B739AF0000DCC36 /* MapPresenter.swift in Sources */,
+				BADBE1E62B739AD3000DCC36 /* RegisterContract.swift in Sources */,
+				BADBE20F2B739B0B000DCC36 /* PayPresenter.swift in Sources */,
+				BADBE1FE2B739AF0000DCC36 /* MapInteractor.swift in Sources */,
+				BADBE2162B739B7D000DCC36 /* MenuModel.swift in Sources */,
+				BADBE1F02B739AE3000DCC36 /* ListContract.swift in Sources */,
+				BADBE1F22B739AE3000DCC36 /* ListRouter.swift in Sources */,
+				BADBE2052B739AFF000DCC36 /* MenuPresenter.swift in Sources */,
+				BADBE1FD2B739AF0000DCC36 /* MapViewController.swift in Sources */,
+				BADBE1FC2B739AF0000DCC36 /* MapRouter.swift in Sources */,
+				BADBE1E72B739AD3000DCC36 /* RegisterPresenter.swift in Sources */,
+				BADBE1E02B7382A4000DCC36 /* LoginInteractor.swift in Sources */,
+				BADBE1F42B739AE3000DCC36 /* ListInteractor.swift in Sources */,
+				BADBE1F12B739AE3000DCC36 /* ListPresenter.swift in Sources */,
 				BADBE1B72B737EA0000DCC36 /* AppDelegate.swift in Sources */,
+				BADBE2072B739AFF000DCC36 /* MenuViewController.swift in Sources */,
+				BADBE2112B739B0B000DCC36 /* PayViewController.swift in Sources */,
+				BADBE2122B739B0B000DCC36 /* PayInteractor.swift in Sources */,
+				BADBE1FA2B739AF0000DCC36 /* MapContract.swift in Sources */,
+				BADBE1EA2B739AD3000DCC36 /* RegisterInteractor.swift in Sources */,
 				BADBE1B92B737EA0000DCC36 /* SceneDelegate.swift in Sources */,
+				BADBE1DD2B7382A4000DCC36 /* LoginPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,7 +537,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = sw_test/Info.plist;
+				INFOPLIST_FILE = sw_test/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -320,7 +564,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = sw_test/Info.plist;
+				INFOPLIST_FILE = sw_test/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
