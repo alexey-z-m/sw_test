@@ -2,20 +2,33 @@
 //  LoginPresenter.swift
 //  sw_test
 //
-//  Created by Alexey Zablotskiy on 07.02.2024.
+//  Created by Alexey Zablotskiy on 08.02.2024.
 //  
 //
 
 import Foundation
 
-class LoginPresenter: ViewToPresenterLoginProtocol {
+class LoginPresenter  {
 
     // MARK: Properties
-    var view: PresenterToViewLoginProtocol?
-    var interactor: PresenterToInteractorLoginProtocol?
-    var router: PresenterToRouterLoginProtocol?
+    weak var view: LoginViewProtocol?
+    var interactor: LoginInteractorProtocol
+    var router: LoginRouterProtocol
+
+    init(interactor: LoginInteractorProtocol, router: LoginRouterProtocol) {
+        self.interactor = interactor
+        self.router = router
+    }
+
 }
 
-extension LoginPresenter: InteractorToPresenterLoginProtocol {
+extension LoginPresenter: LoginPresenterProtocol {
     
+    func register() {
+        router.register()
+    }
+
+    func login() {
+        router.login()
+    }
 }

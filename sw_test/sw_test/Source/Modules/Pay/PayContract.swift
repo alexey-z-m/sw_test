@@ -2,42 +2,28 @@
 //  PayContract.swift
 //  sw_test
 //
-//  Created by Alexey Zablotskiy on 07.02.2024.
+//  Created by Alexey Zablotskiy on 08.02.2024.
 //  
 //
 
 import Foundation
 
+protocol PayViewProtocol: AnyObject {
 
-// MARK: View Output (Presenter -> View)
-protocol PresenterToViewPayProtocol {
-   
 }
 
-
-// MARK: View Input (View -> Presenter)
-protocol ViewToPresenterPayProtocol {
+protocol PayPresenterProtocol {
     
-    var view: PresenterToViewPayProtocol? { get set }
-    var interactor: PresenterToInteractorPayProtocol? { get set }
-    var router: PresenterToRouterPayProtocol? { get set }
+    var view: PayViewProtocol? { get set }
+    var interactor: PayInteractorProtocol { get set }
+    var router: PayRouterProtocol { get set }
 }
 
+protocol PayInteractorProtocol {
 
-// MARK: Interactor Input (Presenter -> Interactor)
-protocol PresenterToInteractorPayProtocol {
-    
-    var presenter: InteractorToPresenterPayProtocol? { get set }
+    var presenter: PayPresenterProtocol? { get set }
 }
 
+protocol PayRouterProtocol {
 
-// MARK: Interactor Output (Interactor -> Presenter)
-protocol InteractorToPresenterPayProtocol {
-    
-}
-
-
-// MARK: Router Input (Presenter -> Router)
-protocol PresenterToRouterPayProtocol {
-    
 }

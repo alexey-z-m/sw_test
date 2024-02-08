@@ -2,20 +2,21 @@
 //  PayPresenter.swift
 //  sw_test
 //
-//  Created by Alexey Zablotskiy on 07.02.2024.
+//  Created by Alexey Zablotskiy on 08.02.2024.
 //  
 //
 
 import Foundation
 
-class PayPresenter: ViewToPresenterPayProtocol {
+class PayPresenter: PayPresenterProtocol {
 
     // MARK: Properties
-    var view: PresenterToViewPayProtocol?
-    var interactor: PresenterToInteractorPayProtocol?
-    var router: PresenterToRouterPayProtocol?
-}
+    weak var view: PayViewProtocol?
+    var interactor: PayInteractorProtocol
+    var router: PayRouterProtocol
 
-extension PayPresenter: InteractorToPresenterPayProtocol {
-    
+    init(interactor: PayInteractorProtocol, router: PayRouterProtocol) {
+        self.interactor = interactor
+        self.router = router
+    }
 }

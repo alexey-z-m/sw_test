@@ -2,14 +2,13 @@
 //  MenuInteractor.swift
 //  sw_test
 //
-//  Created by Alexey Zablotskiy on 07.02.2024.
+//  Created by Alexey Zablotskiy on 08.02.2024.
 //  
 //
 
 import Foundation
 
-class MenuInteractor: PresenterToInteractorMenuProtocol {
+class MenuInteractor: MenuInteractorProtocol {
 
-    // MARK: Properties
-    var presenter: InteractorToPresenterMenuProtocol?
+    var presenter: MenuPresenterProtocol?
 }

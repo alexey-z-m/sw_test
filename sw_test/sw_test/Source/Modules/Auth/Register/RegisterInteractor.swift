@@ -2,14 +2,13 @@
 //  RegisterInteractor.swift
 //  sw_test
 //
-//  Created by Alexey Zablotskiy on 07.02.2024.
+//  Created by Alexey Zablotskiy on 08.02.2024.
 //  
 //
 
 import Foundation
 
-class RegisterInteractor: PresenterToInteractorRegisterProtocol {
+class RegisterInteractor: RegisterInteractorProtocol {
 
-    // MARK: Properties
-    var presenter: InteractorToPresenterRegisterProtocol?
+    var presenter: RegisterPresenterProtocol?
 }

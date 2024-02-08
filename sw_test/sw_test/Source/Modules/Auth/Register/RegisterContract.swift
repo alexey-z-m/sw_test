@@ -2,42 +2,28 @@
 //  RegisterContract.swift
 //  sw_test
 //
-//  Created by Alexey Zablotskiy on 07.02.2024.
+//  Created by Alexey Zablotskiy on 08.02.2024.
 //  
 //
 
 import Foundation
 
+protocol RegisterViewProtocol: AnyObject {
 
-// MARK: View Output (Presenter -> View)
-protocol PresenterToViewRegisterProtocol {
-   
 }
 
-
-// MARK: View Input (View -> Presenter)
-protocol ViewToPresenterRegisterProtocol {
+protocol RegisterPresenterProtocol {
     
-    var view: PresenterToViewRegisterProtocol? { get set }
-    var interactor: PresenterToInteractorRegisterProtocol? { get set }
-    var router: PresenterToRouterRegisterProtocol? { get set }
+    var view: RegisterViewProtocol? { get set }
+    var interactor: RegisterInteractorProtocol { get set }
+    var router: RegisterRouterProtocol { get set }
 }
 
+protocol RegisterInteractorProtocol {
 
-// MARK: Interactor Input (Presenter -> Interactor)
-protocol PresenterToInteractorRegisterProtocol {
-    
-    var presenter: InteractorToPresenterRegisterProtocol? { get set }
+    var presenter: RegisterPresenterProtocol? { get set }
 }
 
+protocol RegisterRouterProtocol {
 
-// MARK: Interactor Output (Interactor -> Presenter)
-protocol InteractorToPresenterRegisterProtocol {
-    
-}
-
-
-// MARK: Router Input (Presenter -> Router)
-protocol PresenterToRouterRegisterProtocol {
-    
 }

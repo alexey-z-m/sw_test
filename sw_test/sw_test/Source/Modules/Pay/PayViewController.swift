@@ -2,24 +2,34 @@
 //  PayViewController.swift
 //  sw_test
 //
-//  Created by Alexey Zablotskiy on 07.02.2024.
+//  Created by Alexey Zablotskiy on 08.02.2024.
 //  
 //
 
 import UIKit
 
 class PayViewController: UIViewController {
-    
+
+    // MARK: - Properties
+    var presenter: PayPresenterProtocol?
+
     // MARK: - Lifecycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupLayout()
+        setupHierarchy()
+    }
+    
+    //MARK: - Funcs
+    func setupLayout() {
+
     }
 
-    // MARK: - Properties
-    var presenter: ViewToPresenterPayProtocol?
-    
+    func setupHierarchy() {
+
+    }
 }
 
-extension PayViewController: PresenterToViewPayProtocol{
+extension PayViewController: PayViewProtocol{
     // TODO: Implement View Output Methods
 }

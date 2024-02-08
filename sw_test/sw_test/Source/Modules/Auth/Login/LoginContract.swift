@@ -2,42 +2,27 @@
 //  LoginContract.swift
 //  sw_test
 //
-//  Created by Alexey Zablotskiy on 07.02.2024.
+//  Created by Alexey Zablotskiy on 08.02.2024.
 //  
 //
 
 import Foundation
 
+protocol LoginViewProtocol: AnyObject {
 
-// MARK: View Output (Presenter -> View)
-protocol PresenterToViewLoginProtocol {
-   
 }
 
-
-// MARK: View Input (View -> Presenter)
-protocol ViewToPresenterLoginProtocol {
-    
-    var view: PresenterToViewLoginProtocol? { get set }
-    var interactor: PresenterToInteractorLoginProtocol? { get set }
-    var router: PresenterToRouterLoginProtocol? { get set }
+protocol LoginPresenterProtocol {
+    func register()
+    func login()
 }
 
+protocol LoginInteractorProtocol: AnyObject {
 
-// MARK: Interactor Input (Presenter -> Interactor)
-protocol PresenterToInteractorLoginProtocol {
-    
-    var presenter: InteractorToPresenterLoginProtocol? { get set }
+    var presenter: LoginPresenterProtocol? { get set }
 }
 
-
-// MARK: Interactor Output (Interactor -> Presenter)
-protocol InteractorToPresenterLoginProtocol {
-    
-}
-
-
-// MARK: Router Input (Presenter -> Router)
-protocol PresenterToRouterLoginProtocol {
-    
+protocol LoginRouterProtocol {
+    func register()
+    func login()
 }

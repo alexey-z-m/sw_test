@@ -2,20 +2,21 @@
 //  ListPresenter.swift
 //  sw_test
 //
-//  Created by Alexey Zablotskiy on 07.02.2024.
+//  Created by Alexey Zablotskiy on 08.02.2024.
 //  
 //
 
 import Foundation
 
-class ListPresenter: ViewToPresenterListProtocol {
+class ListPresenter: ListPresenterProtocol {
 
     // MARK: Properties
-    var view: PresenterToViewListProtocol?
-    var interactor: PresenterToInteractorListProtocol?
-    var router: PresenterToRouterListProtocol?
-}
+    weak var view: ListViewProtocol?
+    var interactor: ListInteractorProtocol
+    var router: ListRouterProtocol
 
-extension ListPresenter: InteractorToPresenterListProtocol {
-    
+    init(interactor: ListInteractorProtocol, router: ListRouterProtocol) {
+        self.interactor = interactor
+        self.router = router
+    }
 }

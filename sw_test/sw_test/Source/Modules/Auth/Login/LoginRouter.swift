@@ -2,29 +2,28 @@
 //  LoginRouter.swift
 //  sw_test
 //
-//  Created by Alexey Zablotskiy on 07.02.2024.
+//  Created by Alexey Zablotskiy on 08.02.2024.
 //  
 //
 
 import Foundation
 import UIKit
 
-class LoginRouter: PresenterToRouterLoginProtocol {
+class LoginRouter: LoginRouterProtocol {
     
-    // MARK: Static methods
-    static func createModule() -> UIViewController {
-        
-        let viewController = LoginViewController()
-        
-        let presenter: ViewToPresenterLoginProtocol & InteractorToPresenterLoginProtocol = LoginPresenter()
-        
-        viewController.presenter = presenter
-        viewController.presenter?.router = LoginRouter()
-        viewController.presenter?.view = viewController
-        viewController.presenter?.interactor = LoginInteractor()
-        viewController.presenter?.interactor?.presenter = presenter
-        
-        return viewController
+    weak var viewController: LoginViewController?
+    
+    func login() {
+        let vc = ListModuleBuilder.build()
+        let navigationVC = UINavigationController(rootViewController: vc)
+        navigationVC.modalPresentationStyle = .fullScreen
+        viewController?.present(navigationVC, animated: false)
     }
     
+    func register() {
+        let vc = RegisterModuleBuilder.build()
+        let navigationVC = UINavigationController(rootViewController: vc)
+        navigationVC.modalPresentationStyle = .fullScreen
+        viewController?.present(navigationVC, animated: false)
+    }
 }

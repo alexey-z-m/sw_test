@@ -2,42 +2,28 @@
 //  MapContract.swift
 //  sw_test
 //
-//  Created by Alexey Zablotskiy on 07.02.2024.
+//  Created by Alexey Zablotskiy on 08.02.2024.
 //  
 //
 
 import Foundation
 
+protocol MapViewProtocol: AnyObject {
 
-// MARK: View Output (Presenter -> View)
-protocol PresenterToViewMapProtocol {
-   
 }
 
-
-// MARK: View Input (View -> Presenter)
-protocol ViewToPresenterMapProtocol {
+protocol MapPresenterProtocol {
     
-    var view: PresenterToViewMapProtocol? { get set }
-    var interactor: PresenterToInteractorMapProtocol? { get set }
-    var router: PresenterToRouterMapProtocol? { get set }
+    var view: MapViewProtocol? { get set }
+    var interactor: MapInteractorProtocol { get set }
+    var router: MapRouterProtocol { get set }
 }
 
+protocol MapInteractorProtocol {
 
-// MARK: Interactor Input (Presenter -> Interactor)
-protocol PresenterToInteractorMapProtocol {
-    
-    var presenter: InteractorToPresenterMapProtocol? { get set }
+    var presenter: MapPresenterProtocol? { get set }
 }
 
+protocol MapRouterProtocol {
 
-// MARK: Interactor Output (Interactor -> Presenter)
-protocol InteractorToPresenterMapProtocol {
-    
-}
-
-
-// MARK: Router Input (Presenter -> Router)
-protocol PresenterToRouterMapProtocol {
-    
 }

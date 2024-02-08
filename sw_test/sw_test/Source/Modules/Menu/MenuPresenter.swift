@@ -2,20 +2,21 @@
 //  MenuPresenter.swift
 //  sw_test
 //
-//  Created by Alexey Zablotskiy on 07.02.2024.
+//  Created by Alexey Zablotskiy on 08.02.2024.
 //  
 //
 
 import Foundation
 
-class MenuPresenter: ViewToPresenterMenuProtocol {
+class MenuPresenter: MenuPresenterProtocol {
 
     // MARK: Properties
-    var view: PresenterToViewMenuProtocol?
-    var interactor: PresenterToInteractorMenuProtocol?
-    var router: PresenterToRouterMenuProtocol?
-}
+    weak var view: MenuViewProtocol?
+    var interactor: MenuInteractorProtocol
+    var router: MenuRouterProtocol
 
-extension MenuPresenter: InteractorToPresenterMenuProtocol {
-    
+    init(interactor: MenuInteractorProtocol, router: MenuRouterProtocol) {
+        self.interactor = interactor
+        self.router = router
+    }
 }

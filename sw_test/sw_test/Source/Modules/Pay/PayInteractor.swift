@@ -2,14 +2,13 @@
 //  PayInteractor.swift
 //  sw_test
 //
-//  Created by Alexey Zablotskiy on 07.02.2024.
+//  Created by Alexey Zablotskiy on 08.02.2024.
 //  
 //
 
 import Foundation
 
-class PayInteractor: PresenterToInteractorPayProtocol {
+class PayInteractor: PayInteractorProtocol {
 
-    // MARK: Properties
-    var presenter: InteractorToPresenterPayProtocol?
+    var presenter: PayPresenterProtocol?
 }

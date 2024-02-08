@@ -2,14 +2,13 @@
 //  MapInteractor.swift
 //  sw_test
 //
-//  Created by Alexey Zablotskiy on 07.02.2024.
+//  Created by Alexey Zablotskiy on 08.02.2024.
 //  
 //
 
 import Foundation
 
-class MapInteractor: PresenterToInteractorMapProtocol {
+class MapInteractor: MapInteractorProtocol {
 
-    // MARK: Properties
-    var presenter: InteractorToPresenterMapProtocol?
+    var presenter: MapPresenterProtocol?
 }

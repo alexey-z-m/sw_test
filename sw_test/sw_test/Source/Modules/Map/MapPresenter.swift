@@ -2,20 +2,21 @@
 //  MapPresenter.swift
 //  sw_test
 //
-//  Created by Alexey Zablotskiy on 07.02.2024.
+//  Created by Alexey Zablotskiy on 08.02.2024.
 //  
 //
 
 import Foundation
 
-class MapPresenter: ViewToPresenterMapProtocol {
+class MapPresenter: MapPresenterProtocol {
 
     // MARK: Properties
-    var view: PresenterToViewMapProtocol?
-    var interactor: PresenterToInteractorMapProtocol?
-    var router: PresenterToRouterMapProtocol?
-}
+    weak var view: MapViewProtocol?
+    var interactor: MapInteractorProtocol
+    var router: MapRouterProtocol
 
-extension MapPresenter: InteractorToPresenterMapProtocol {
-    
+    init(interactor: MapInteractorProtocol, router: MapRouterProtocol) {
+        self.interactor = interactor
+        self.router = router
+    }
 }

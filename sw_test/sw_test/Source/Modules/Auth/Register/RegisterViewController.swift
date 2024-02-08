@@ -2,24 +2,34 @@
 //  RegisterViewController.swift
 //  sw_test
 //
-//  Created by Alexey Zablotskiy on 07.02.2024.
+//  Created by Alexey Zablotskiy on 08.02.2024.
 //  
 //
 
 import UIKit
 
 class RegisterViewController: UIViewController {
-    
+
+    // MARK: - Properties
+    var presenter: RegisterPresenterProtocol?
+
     // MARK: - Lifecycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupLayout()
+        setupHierarchy()
+    }
+    
+    //MARK: - Funcs
+    func setupLayout() {
+
     }
 
-    // MARK: - Properties
-    var presenter: ViewToPresenterRegisterProtocol?
-    
+    func setupHierarchy() {
+
+    }
 }
 
-extension RegisterViewController: PresenterToViewRegisterProtocol{
+extension RegisterViewController: RegisterViewProtocol{
     // TODO: Implement View Output Methods
 }

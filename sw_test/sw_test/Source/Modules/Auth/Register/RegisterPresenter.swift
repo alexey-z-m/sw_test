@@ -2,20 +2,21 @@
 //  RegisterPresenter.swift
 //  sw_test
 //
-//  Created by Alexey Zablotskiy on 07.02.2024.
+//  Created by Alexey Zablotskiy on 08.02.2024.
 //  
 //
 
 import Foundation
 
-class RegisterPresenter: ViewToPresenterRegisterProtocol {
+class RegisterPresenter: RegisterPresenterProtocol {
 
     // MARK: Properties
-    var view: PresenterToViewRegisterProtocol?
-    var interactor: PresenterToInteractorRegisterProtocol?
-    var router: PresenterToRouterRegisterProtocol?
-}
+    weak var view: RegisterViewProtocol?
+    var interactor: RegisterInteractorProtocol
+    var router: RegisterRouterProtocol
 
-extension RegisterPresenter: InteractorToPresenterRegisterProtocol {
-    
+    init(interactor: RegisterInteractorProtocol, router: RegisterRouterProtocol) {
+        self.interactor = interactor
+        self.router = router
+    }
 }

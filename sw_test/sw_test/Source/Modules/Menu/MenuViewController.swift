@@ -2,24 +2,34 @@
 //  MenuViewController.swift
 //  sw_test
 //
-//  Created by Alexey Zablotskiy on 07.02.2024.
+//  Created by Alexey Zablotskiy on 08.02.2024.
 //  
 //
 
 import UIKit
 
 class MenuViewController: UIViewController {
-    
+
+    // MARK: - Properties
+    var presenter: MenuPresenterProtocol?
+
     // MARK: - Lifecycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupLayout()
+        setupHierarchy()
+    }
+    
+    //MARK: - Funcs
+    func setupLayout() {
+
     }
 
-    // MARK: - Properties
-    var presenter: ViewToPresenterMenuProtocol?
-    
+    func setupHierarchy() {
+
+    }
 }
 
-extension MenuViewController: PresenterToViewMenuProtocol{
+extension MenuViewController: MenuViewProtocol{
     // TODO: Implement View Output Methods
 }
