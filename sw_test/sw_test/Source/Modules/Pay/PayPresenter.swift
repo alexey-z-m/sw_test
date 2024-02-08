@@ -19,4 +19,8 @@ class PayPresenter: PayPresenterProtocol {
         self.interactor = interactor
         self.router = router
     }
+
+    func pay() {
+        router.pay()
+    }
 }

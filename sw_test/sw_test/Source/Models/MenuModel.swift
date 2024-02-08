@@ -8,5 +8,8 @@
 import Foundation
 
 struct MenuModel: Decodable {
-    
+    let id: Int
+    let name: String
+    let imageURL: String
+    let price: Double
 }

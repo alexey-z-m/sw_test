@@ -3,7 +3,7 @@
 //  sw_test
 //
 //  Created by Alexey Zablotskiy on 08.02.2024.
-//  
+//
 //
 
 import Foundation
@@ -13,5 +13,13 @@ class ListRouter: ListRouterProtocol {
 
     weak var viewController: ListViewController?
 
-    
+    func map() {
+        let vc = MapModuleBuilder.build()
+        viewController?.navigationController?.pushViewController(vc, animated: true)
+    }
+
+    func menu() {
+        let vc = MenuModuleBuilder.build()
+        viewController?.navigationController?.pushViewController(vc, animated: true)
+    }
 }

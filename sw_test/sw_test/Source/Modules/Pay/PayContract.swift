@@ -17,6 +17,8 @@ protocol PayPresenterProtocol {
     var view: PayViewProtocol? { get set }
     var interactor: PayInteractorProtocol { get set }
     var router: PayRouterProtocol { get set }
+
+    func pay()
 }
 
 protocol PayInteractorProtocol {
@@ -25,5 +27,5 @@ protocol PayInteractorProtocol {
 }
 
 protocol PayRouterProtocol {
-
+    func pay()
 }

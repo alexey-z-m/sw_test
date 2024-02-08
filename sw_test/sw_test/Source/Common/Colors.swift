@@ -22,7 +22,7 @@ struct PreviewColors: View {
                 Text("brown")
                     .shadow(color: .white, radius: 3)
             }
-        ZStack{
+            ZStack{
                 Color(CustomColors.darkBrown)
                 Text("darkBrown")
                     .shadow(color: .white, radius: 3)
@@ -37,7 +37,6 @@ struct PreviewColors: View {
                 Text("navigationBarColor")
                     .shadow(color: .white, radius: 3)
             }
-            
         }
     }
 }

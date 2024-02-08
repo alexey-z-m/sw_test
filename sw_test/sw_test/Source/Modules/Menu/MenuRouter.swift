@@ -13,5 +13,8 @@ class MenuRouter: MenuRouterProtocol {
 
     weak var viewController: MenuViewController?
 
-    
+    func pay() {
+        let vc = PayModuleBuilder.build()
+        viewController?.navigationController?.pushViewController(vc, animated: true)
+    }
 }

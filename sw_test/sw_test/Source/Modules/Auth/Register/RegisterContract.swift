@@ -17,6 +17,8 @@ protocol RegisterPresenterProtocol {
     var view: RegisterViewProtocol? { get set }
     var interactor: RegisterInteractorProtocol { get set }
     var router: RegisterRouterProtocol { get set }
+
+    func registerProfile()
 }
 
 protocol RegisterInteractorProtocol {
@@ -25,5 +27,5 @@ protocol RegisterInteractorProtocol {
 }
 
 protocol RegisterRouterProtocol {
-
+    func registerProfile()
 }

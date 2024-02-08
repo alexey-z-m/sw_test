@@ -8,5 +8,7 @@
 import Foundation
 
 struct LocationsModel: Decodable {
-    
+    let id: Int
+    let name: String
+    let point: LocPointModel
 }

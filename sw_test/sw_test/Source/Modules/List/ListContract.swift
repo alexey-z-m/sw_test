@@ -13,7 +13,9 @@ protocol ListViewProtocol: AnyObject {
 }
 
 protocol ListPresenterProtocol {
-    
+    func map()
+    func menu()
+
 }
 
 protocol ListInteractorProtocol {
@@ -22,5 +24,6 @@ protocol ListInteractorProtocol {
 }
 
 protocol ListRouterProtocol {
-
+    func map()
+    func menu()
 }

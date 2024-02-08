@@ -8,5 +8,6 @@
 import Foundation
 
 struct TokenModel: Decodable {
-    
+    let token:  String
+    let tokenLifetime: Int
 }

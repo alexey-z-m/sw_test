@@ -19,4 +19,12 @@ class ListPresenter: ListPresenterProtocol {
         self.interactor = interactor
         self.router = router
     }
+
+    func map() {
+        router.map()
+    }
+
+    func menu() {
+        router.menu()
+    }
 }

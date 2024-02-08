@@ -17,6 +17,8 @@ protocol MenuPresenterProtocol {
     var view: MenuViewProtocol? { get set }
     var interactor: MenuInteractorProtocol { get set }
     var router: MenuRouterProtocol { get set }
+
+    func pay()
 }
 
 protocol MenuInteractorProtocol {
@@ -25,5 +27,5 @@ protocol MenuInteractorProtocol {
 }
 
 protocol MenuRouterProtocol {
-
+    func pay()
 }

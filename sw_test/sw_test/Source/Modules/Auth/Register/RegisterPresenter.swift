@@ -19,4 +19,8 @@ class RegisterPresenter: RegisterPresenterProtocol {
         self.interactor = interactor
         self.router = router
     }
+
+    func registerProfile() {
+        router.registerProfile()
+    }
 }

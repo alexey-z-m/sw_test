@@ -8,5 +8,6 @@
 import Foundation
 
 struct LocPointModel: Decodable {
-    
+    let latitude: String
+    let longitude: String
 }
