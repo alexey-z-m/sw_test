@@ -36,6 +36,7 @@ class ListViewController: UIViewController {
     // MARK: - Lifecycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
+        presenter?.viewDidLoad()
         tableView.dataSource = self
         tableView.delegate = self
         setupNavigationBar()
@@ -91,7 +92,7 @@ extension ListViewController: ListViewProtocol{
 
 extension ListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        5
+        presenter?.interactor.cafeList.count ?? 0
 
     }
 
@@ -102,7 +103,7 @@ extension ListViewController: UITableViewDataSource {
         ) as? ListTableViewCell else {
             return UITableViewCell()
         }
-        cell.configure()
+        cell.configure(cafe: presenter?.interactor.cafeList[indexPath.item])
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

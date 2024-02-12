@@ -13,6 +13,11 @@ protocol ListViewProtocol: AnyObject {
 }
 
 protocol ListPresenterProtocol {
+    var view: ListViewProtocol? { get set }
+    var interactor: ListInteractorProtocol { get set }
+    var router: ListRouterProtocol { get set }
+    
+    func viewDidLoad()
     func map()
     func menu()
 
@@ -21,6 +26,8 @@ protocol ListPresenterProtocol {
 protocol ListInteractorProtocol {
 
     var presenter: ListPresenterProtocol? { get set }
+    var cafeList: [LocationsModel] { get }
+    func getCafeList()
 }
 
 protocol ListRouterProtocol {

@@ -20,6 +20,10 @@ class ListPresenter: ListPresenterProtocol {
         self.router = router
     }
 
+    func viewDidLoad() {
+        interactor.getCafeList()
+    }
+
     func map() {
         router.map()
     }

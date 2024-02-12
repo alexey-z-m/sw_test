@@ -66,7 +66,9 @@ class ListTableViewCell: UITableViewCell {
         fatalError()
     }
 
-    func configure() {
+    func configure(cafe: LocationsModel?) {
+        guard let cafe else { return }
+        nameLabel.text = cafe.name
 
     }
 

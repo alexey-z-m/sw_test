@@ -133,11 +133,11 @@ class MenuCollectionViewCell: UICollectionViewCell {
     }
 
     @objc func minusButton() {
-        var count = Int(amount.text ?? "0") ?? 0
+        let count = Int(amount.text ?? "0") ?? 0
         if count > 0 {
             guard let item else { return }
             delegate?.minusItem(item: item)
-            amount.text = String((Int(amount.text ?? "0") ?? 0) - 1)
+            amount.text = String(count - 1)
         } else {
             amount.isEnabled = true
         }
