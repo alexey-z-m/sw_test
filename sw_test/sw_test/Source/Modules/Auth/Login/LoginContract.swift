@@ -14,12 +14,13 @@ protocol LoginViewProtocol: AnyObject {
 
 protocol LoginPresenterProtocol {
     func register()
-    func login()
+    func login(login: String, password: String)
 }
 
 protocol LoginInteractorProtocol: AnyObject {
 
     var presenter: LoginPresenterProtocol? { get set }
+    func login(login: String, password: String, completion: @escaping (Result<TokenModel, Error>) -> ()) 
 }
 
 protocol LoginRouterProtocol {

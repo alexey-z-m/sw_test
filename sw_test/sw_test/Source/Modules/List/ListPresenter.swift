@@ -21,7 +21,14 @@ class ListPresenter: ListPresenterProtocol {
     }
 
     func viewDidLoad() {
-        interactor.getCafeList()
+        interactor.getCafeList { [weak self] result in
+            switch result {
+            case .success(_):
+                self?.view?.tableView.reloadData()
+            case .failure(_):
+                print("getCafe fail")
+            }
+        }
     }
 
     func map() {

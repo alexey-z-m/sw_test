@@ -21,7 +21,12 @@ class MenuPresenter: MenuPresenterProtocol {
     }
 
     func viewDidLoad() {
-        interactor.getMenu()
+        interactor.getMenu { [weak self] result in
+            switch result {
+            case .success(_): self?.view?.collectionView.reloadData()
+            case .failure(_): print("viewDidLoad fail")
+            }
+        }
     }
 
     func pay() {

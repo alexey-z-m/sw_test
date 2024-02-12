@@ -7,9 +7,10 @@
 //
 
 import Foundation
+import UIKit
 
 protocol ListViewProtocol: AnyObject {
-
+    var tableView: UITableView { get }
 }
 
 protocol ListPresenterProtocol {
@@ -27,7 +28,7 @@ protocol ListInteractorProtocol {
 
     var presenter: ListPresenterProtocol? { get set }
     var cafeList: [LocationsModel] { get }
-    func getCafeList()
+    func getCafeList(completion: @escaping (Result<[LocationsModel],Error>) -> ()) 
 }
 
 protocol ListRouterProtocol {

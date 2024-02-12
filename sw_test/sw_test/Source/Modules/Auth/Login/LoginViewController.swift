@@ -154,7 +154,18 @@ class LoginViewController: UIViewController {
     }
 
     @objc func login() {
-        presenter?.login()
+        guard let login = emailTextField.text else { return }
+        guard let password = passwordTextField.text else { return }
+        if !login.isEmpty && !password.isEmpty {
+            presenter?.login(login: login, password: password)
+        } else {
+            if login.isEmpty {
+                emailTextField.layer.borderColor = UIColor.red.cgColor
+            } else { emailTextField.layer.borderColor = CustomColors.darkBrown.cgColor }
+            if password.isEmpty {
+                passwordTextField.layer.borderColor = UIColor.red.cgColor
+            } else { emailTextField.layer.borderColor = CustomColors.darkBrown.cgColor }
+        }
     }
 }
 

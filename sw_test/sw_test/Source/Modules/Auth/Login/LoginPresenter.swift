@@ -3,7 +3,7 @@
 //  sw_test
 //
 //  Created by Alexey Zablotskiy on 08.02.2024.
-//  
+//
 //
 
 import Foundation
@@ -23,12 +23,19 @@ class LoginPresenter  {
 }
 
 extension LoginPresenter: LoginPresenterProtocol {
-    
+
     func register() {
         router.register()
     }
 
-    func login() {
-        router.login()
+    func login(login: String, password: String) {
+        interactor.login(login: login, password: password) { [weak self] result in
+            switch result {
+            case .success(_):
+                self?.router.login()
+            case .failure(_):
+                print("+++ login fail")
+            }
+        }
     }
 }

@@ -7,9 +7,10 @@
 //
 
 import Foundation
+import UIKit
 
 protocol MenuViewProtocol: AnyObject {
-
+    var collectionView: UICollectionView { get }
 }
 
 protocol MenuPresenterProtocol {
@@ -31,7 +32,7 @@ protocol MenuInteractorProtocol {
     var presenter: MenuPresenterProtocol? { get set }
     var orderedItems: [(item: MenuModel, count: Int)] { get }
 
-    func getMenu()
+    func getMenu(completion: @escaping(Result<[MenuModel],Error>) -> ())
 
     func plusItem(item: MenuModel)
     func minusItem(item: MenuModel)

@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		6BDB12E38E8B4603A8B72149 /* Pods_sw_test.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B73387B869DC3F6B3EC82A8B /* Pods_sw_test.framework */; };
+		BA5094722B7A013800694EF2 /* NetworkProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5094712B7A013800694EF2 /* NetworkProtocol.swift */; };
+		BA5094752B7A028500694EF2 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = BA5094742B7A028500694EF2 /* Alamofire */; };
+		BA5094772B7A040D00694EF2 /* CustomError.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5094762B7A040D00694EF2 /* CustomError.swift */; };
+		BA50947C2B7A3A3000694EF2 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = BA50947B2B7A3A3000694EF2 /* Kingfisher */; };
 		BAB09BAA2B761479003EA373 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB09BA92B761479003EA373 /* MapView.swift */; };
 		BADBE1B72B737EA0000DCC36 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADBE1B62B737EA0000DCC36 /* AppDelegate.swift */; };
 		BADBE1B92B737EA0000DCC36 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADBE1B82B737EA0000DCC36 /* SceneDelegate.swift */; };
@@ -66,6 +70,8 @@
 		527EBBF4F679E8002C285077 /* Pods-sw_test.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sw_test.release.xcconfig"; path = "Target Support Files/Pods-sw_test/Pods-sw_test.release.xcconfig"; sourceTree = "<group>"; };
 		A78509683EA780F4EE0BE315 /* Pods-sw_test.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sw_test.debug.xcconfig"; path = "Target Support Files/Pods-sw_test/Pods-sw_test.debug.xcconfig"; sourceTree = "<group>"; };
 		B73387B869DC3F6B3EC82A8B /* Pods_sw_test.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_sw_test.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BA5094712B7A013800694EF2 /* NetworkProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkProtocol.swift; sourceTree = "<group>"; };
+		BA5094762B7A040D00694EF2 /* CustomError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomError.swift; sourceTree = "<group>"; };
 		BAB09BA92B761479003EA373 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		BADBE1B32B737EA0000DCC36 /* sw_test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sw_test.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BADBE1B62B737EA0000DCC36 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -126,8 +132,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				BADBE21F2B739E22000DCC36 /* SnapKit in Frameworks */,
+				BA5094752B7A028500694EF2 /* Alamofire in Frameworks */,
 				BADBE2212B739E22000DCC36 /* SnapKit-Dynamic in Frameworks */,
 				6BDB12E38E8B4603A8B72149 /* Pods_sw_test.framework in Frameworks */,
+				BA50947C2B7A3A3000694EF2 /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -244,6 +252,8 @@
 			isa = PBXGroup;
 			children = (
 				BADBE21B2B739BDB000DCC36 /* Network.swift */,
+				BA5094712B7A013800694EF2 /* NetworkProtocol.swift */,
+				BA5094762B7A040D00694EF2 /* CustomError.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -392,6 +402,8 @@
 			packageProductDependencies = (
 				BADBE21E2B739E22000DCC36 /* SnapKit */,
 				BADBE2202B739E22000DCC36 /* SnapKit-Dynamic */,
+				BA5094742B7A028500694EF2 /* Alamofire */,
+				BA50947B2B7A3A3000694EF2 /* Kingfisher */,
 			);
 			productName = sw_test;
 			productReference = BADBE1B32B737EA0000DCC36 /* sw_test.app */;
@@ -423,6 +435,8 @@
 			mainGroup = BADBE1AA2B737EA0000DCC36;
 			packageReferences = (
 				BADBE21D2B739E22000DCC36 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				BA5094732B7A028500694EF2 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				BA50947A2B7A3A3000694EF2 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = BADBE1B42B737EA0000DCC36 /* Products */;
 			projectDirPath = "";
@@ -502,6 +516,7 @@
 				BADBE26E2B74F33B000DCC36 /* MenuInteractor.swift in Sources */,
 				BADBE2322B74D244000DCC36 /* LoginModuleBuilder.swift in Sources */,
 				BADBE2802B750003000DCC36 /* MenuCollectionViewCell.swift in Sources */,
+				BA5094722B7A013800694EF2 /* NetworkProtocol.swift in Sources */,
 				BADBE2782B74F347000DCC36 /* PayRouter.swift in Sources */,
 				BADBE22D2B74CE85000DCC36 /* LoginPresenter.swift in Sources */,
 				BADBE2542B74F2BC000DCC36 /* RegisterRouter.swift in Sources */,
@@ -516,6 +531,7 @@
 				BADBE2492B74D3E3000DCC36 /* ListViewController.swift in Sources */,
 				BADBE25F2B74F32C000DCC36 /* MapPresenter.swift in Sources */,
 				BADBE2772B74F347000DCC36 /* PayPresenter.swift in Sources */,
+				BA5094772B7A040D00694EF2 /* CustomError.swift in Sources */,
 				BADBE2462B74D3E3000DCC36 /* ListContract.swift in Sources */,
 				BADBE24A2B74D3E3000DCC36 /* ListInteractor.swift in Sources */,
 				BADBE2162B739B7D000DCC36 /* MenuModel.swift in Sources */,
@@ -755,6 +771,22 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		BA5094732B7A028500694EF2 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.8.1;
+			};
+		};
+		BA50947A2B7A3A3000694EF2 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.10.2;
+			};
+		};
 		BADBE21D2B739E22000DCC36 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
@@ -766,6 +798,16 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		BA5094742B7A028500694EF2 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BA5094732B7A028500694EF2 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		BA50947B2B7A3A3000694EF2 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BA50947A2B7A3A3000694EF2 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
 		BADBE21E2B739E22000DCC36 /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = BADBE21D2B739E22000DCC36 /* XCRemoteSwiftPackageReference "SnapKit" */;

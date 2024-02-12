@@ -12,4 +12,10 @@ class LoginInteractor: LoginInteractorProtocol {
 
     // MARK: Properties
     var presenter: LoginPresenterProtocol?
+
+    func login(login: String, password: String, completion: @escaping (Result<TokenModel, Error>) -> ()) {
+        Network.shared.login(login: login, password: password) { result in
+            completion(result)
+        }
+    }
 }

@@ -107,7 +107,6 @@ extension ListViewController: UITableViewDataSource {
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("select row \(indexPath)")
         guard let id = presenter?.interactor.cafeList[indexPath.item].id else { return }
         presenter?.menu(idCafe: id)
     }

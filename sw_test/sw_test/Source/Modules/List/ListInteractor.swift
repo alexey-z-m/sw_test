@@ -3,19 +3,24 @@
 //  sw_test
 //
 //  Created by Alexey Zablotskiy on 08.02.2024.
-//  
+//
 //
 
 import Foundation
 
 class ListInteractor: ListInteractorProtocol {
-    
+
     var presenter: ListPresenterProtocol?
     var cafeList: [LocationsModel] = []
 
-    func getCafeList() {
-        cafeList.append(LocationsModel(id: 1, name: "Раз", point: LocPointModel(latitude: "", longitude: "")))
-        cafeList.append(LocationsModel(id: 1, name: "Два", point: LocPointModel(latitude: "", longitude: "")))
-        cafeList.append(LocationsModel(id: 1, name: "Три", point: LocPointModel(latitude: "", longitude: "")))
+    func getCafeList(completion: @escaping (Result<[LocationsModel],Error>) -> ())  {
+        Network.shared.getCafes { [weak self] result in
+            switch result {
+            case .success(let cafes):
+                self?.cafeList = cafes
+                completion(.success(cafes))
+            case .failure(_): print("getCafeList fail")
+            }
+        }
     }
 }

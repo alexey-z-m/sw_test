@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class MenuCollectionViewCell: UICollectionViewCell {
     static let identifier = "MenuCollectionViewCell"
@@ -25,11 +26,16 @@ class MenuCollectionViewCell: UICollectionViewCell {
         return view
     }()
 
-    let image: UIImageView = {
+    let imageItem: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIImage(systemName: "photo")
+        imageView.clipsToBounds = true
         imageView.contentMode = .scaleAspectFill
         return imageView
+    }()
+
+    let activityIndicator: UIActivityIndicatorView = {
+        let view = UIActivityIndicatorView()
+        return view
     }()
 
     let itemName: UILabel = {
@@ -87,7 +93,8 @@ class MenuCollectionViewCell: UICollectionViewCell {
 
     private func setupHierarchy() {
         addSubview(cell)
-        addSubview(image)
+        addSubview(imageItem)
+        imageItem.addSubview(activityIndicator)
         addSubview(itemName)
         addSubview(price)
         contentView.addSubview(stackAmount)
@@ -100,14 +107,18 @@ class MenuCollectionViewCell: UICollectionViewCell {
         cell.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
-        image.snp.makeConstraints { make in
+        imageItem.snp.makeConstraints { make in
             make.leading.top.trailing.equalToSuperview()
             make.height.equalTo(contentView.bounds.size.width * 0.825)
+        }
+        activityIndicator.snp.makeConstraints { make in
+            make.centerX.equalToSuperview()
+            make.centerY.equalToSuperview()
         }
         itemName.snp.makeConstraints { make in
             make.leading.equalToSuperview().offset(11)
             make.trailing.equalToSuperview().inset(11)
-            make.top.equalTo(image.snp.bottom).offset(10)
+            make.top.equalTo(imageItem.snp.bottom).offset(10)
         }
         price.snp.makeConstraints { make in
             make.leading.equalToSuperview().offset(11)
@@ -129,7 +140,11 @@ class MenuCollectionViewCell: UICollectionViewCell {
         self.item = item
         itemName.text = item.name
         price.text = String(item.price)
-        //backgroundColor = UIColor.red
+        activityIndicator.startAnimating()
+        guard let url = URL(string: item.imageURL) else { return }
+        imageItem.kf.setImage(with: url) { [weak self] _ in
+            self?.activityIndicator.stopAnimating()
+        }
     }
 
     @objc func minusButton() {
@@ -149,3 +164,4 @@ class MenuCollectionViewCell: UICollectionViewCell {
         amount.text = String((Int(amount.text ?? "0") ?? 0) + 1)
     }
 }
+
