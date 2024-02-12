@@ -124,7 +124,8 @@ class MenuCollectionViewCell: UICollectionViewCell {
         fatalError()
     }
 
-    func configure(item: MenuModel) {
+    func configure(item: MenuModel?) {
+        guard let item else { return }
         self.item = item
         itemName.text = item.name
         price.text = String(item.price)

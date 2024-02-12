@@ -18,6 +18,8 @@ protocol MenuPresenterProtocol {
     var interactor: MenuInteractorProtocol { get set }
     var router: MenuRouterProtocol { get set }
 
+    func viewDidLoad()
+
     func pay()
 
     func plusItem(item: MenuModel)
@@ -27,6 +29,9 @@ protocol MenuPresenterProtocol {
 protocol MenuInteractorProtocol {
 
     var presenter: MenuPresenterProtocol? { get set }
+    var orderedItems: [(item: MenuModel, count: Int)] { get }
+
+    func getMenu(id: String)
 
     func plusItem(item: MenuModel)
     func minusItem(item: MenuModel)

@@ -37,6 +37,7 @@ class MenuViewController: UIViewController {
     // MARK: - Lifecycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
+        presenter?.viewDidLoad()
         collectionView.dataSource = self
         collectionView.delegate = self
         setupNavigationBar()
@@ -98,7 +99,7 @@ class MenuViewController: UIViewController {
 
 extension MenuViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        7
+        presenter?.interactor.orderedItems.count ?? 0
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -109,7 +110,7 @@ extension MenuViewController: UICollectionViewDataSource {
             return UICollectionViewCell()
         }
         //let model = model[indexPath.row]
-        cell.configure(item: MenuModel(id: 1, name: "булка", imageURL: "булка", price: 20.5)) //(cell: model)
+        cell.configure(item: presenter?.interactor.orderedItems[indexPath.item].item) //(cell: model)
         return cell
     }
 }

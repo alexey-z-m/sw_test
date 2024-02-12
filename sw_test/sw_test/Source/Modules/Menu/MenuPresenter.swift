@@ -20,6 +20,10 @@ class MenuPresenter: MenuPresenterProtocol {
         self.router = router
     }
 
+    func viewDidLoad() {
+        interactor.getMenu(id: "")
+    }
+
     func pay() {
         router.pay()
     }
