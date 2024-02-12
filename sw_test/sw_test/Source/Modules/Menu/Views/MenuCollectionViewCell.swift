@@ -11,7 +11,7 @@ import Kingfisher
 class MenuCollectionViewCell: UICollectionViewCell {
     static let identifier = "MenuCollectionViewCell"
 
-    weak var delegate: MenuPresenter?
+    weak var delegate: ItemDelegate?
     var item: MenuModel?
 
     let cell: UIView = {
@@ -159,9 +159,10 @@ class MenuCollectionViewCell: UICollectionViewCell {
     }
 
     @objc func plusButton() {
+        let count = Int(amount.text ?? "0") ?? 0
         guard let item else { return }
         delegate?.plusItem(item: item)
-        amount.text = String((Int(amount.text ?? "0") ?? 0) + 1)
+        amount.text = String(count + 1)
     }
 }
 

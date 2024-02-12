@@ -49,6 +49,7 @@ class LoginViewController: UIViewController {
     let emailTextField: UITextField = {
         let textField = UITextField()
         textField.placeholder = "example@example.ru"
+        textField.text = "login"
         textField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 19, height: 1))
         textField.leftViewMode = .always
         textField.layer.borderWidth = 2
@@ -75,6 +76,7 @@ class LoginViewController: UIViewController {
     let passwordTextField: UITextField = {
         let textField = UITextField()
         textField.placeholder = "*****"
+        textField.text = "password"
         textField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 19, height: 1))
         textField.leftViewMode = .always
         textField.layer.borderWidth = 2

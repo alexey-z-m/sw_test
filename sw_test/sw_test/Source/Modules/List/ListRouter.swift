@@ -13,8 +13,8 @@ class ListRouter: ListRouterProtocol {
 
     weak var viewController: ListViewController?
 
-    func map() {
-        let vc = MapModuleBuilder.build()
+    func map(cafeList: [LocationsModel]) {
+        let vc = MapModuleBuilder.build(cafeList: cafeList)
         viewController?.navigationController?.pushViewController(vc, animated: true)
     }
 

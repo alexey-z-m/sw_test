@@ -22,9 +22,6 @@ protocol MenuPresenterProtocol {
     func viewDidLoad()
 
     func pay()
-
-    func plusItem(item: MenuModel)
-    func minusItem(item: MenuModel)
 }
 
 protocol MenuInteractorProtocol {
@@ -39,5 +36,10 @@ protocol MenuInteractorProtocol {
 }
 
 protocol MenuRouterProtocol {
-    func pay()
+    func pay(orderedItems: [(item: MenuModel, count: Int)])
+}
+
+protocol ItemDelegate: AnyObject {
+    func plusItem(item: MenuModel)
+    func minusItem(item: MenuModel)
 }

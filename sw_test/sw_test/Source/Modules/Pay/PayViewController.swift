@@ -82,6 +82,8 @@ class PayViewController: UIViewController {
     @objc func pay() {
         presenter?.pay()
     }
+
+
 }
 
 extension PayViewController: UITableViewDelegate {
@@ -91,8 +93,9 @@ extension PayViewController: UITableViewDelegate {
 }
 
 extension PayViewController: UITableViewDataSource {
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        5
+        return presenter?.interactor.orderedItems.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -102,7 +105,7 @@ extension PayViewController: UITableViewDataSource {
         ) as? PayTableViewCell else {
             return UITableViewCell()
         }
-        //cell.configure()
+        cell.configure()
         return cell
     }
 }

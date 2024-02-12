@@ -24,6 +24,7 @@ protocol PayPresenterProtocol {
 protocol PayInteractorProtocol {
 
     var presenter: PayPresenterProtocol? { get set }
+    var orderedItems: [(item: MenuModel, count: Int)] { get }
 }
 
 protocol PayRouterProtocol {

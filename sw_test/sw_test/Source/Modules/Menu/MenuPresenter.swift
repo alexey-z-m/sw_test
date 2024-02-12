@@ -30,10 +30,13 @@ class MenuPresenter: MenuPresenterProtocol {
     }
 
     func pay() {
-        router.pay()
+        router.pay(orderedItems: interactor.orderedItems)
     }
+}
 
+extension MenuPresenter: ItemDelegate {
     func plusItem(item: MenuModel) {
+        print("+++ presenter")
         interactor.plusItem(item: item)
     }
     func minusItem(item: MenuModel) {

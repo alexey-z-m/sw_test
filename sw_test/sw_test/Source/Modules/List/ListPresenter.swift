@@ -32,7 +32,7 @@ class ListPresenter: ListPresenterProtocol {
     }
 
     func map() {
-        router.map()
+        router.map(cafeList: interactor.cafeList)
     }
 
     func menu(idCafe: Int) {

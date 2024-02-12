@@ -19,4 +19,8 @@ class MapPresenter: MapPresenterProtocol {
         self.interactor = interactor
         self.router = router
     }
+
+    func viewDidLoad() {
+        view?.addPoints(cafesList: interactor.getCafes())
+    }
 }

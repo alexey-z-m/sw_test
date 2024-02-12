@@ -32,6 +32,6 @@ protocol ListInteractorProtocol {
 }
 
 protocol ListRouterProtocol {
-    func map()
+    func map(cafeList: [LocationsModel])
     func menu(idCafe: Int)
 }

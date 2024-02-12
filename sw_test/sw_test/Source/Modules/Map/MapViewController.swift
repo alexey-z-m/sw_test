@@ -8,6 +8,7 @@
 
 import UIKit
 import YandexMapsMobile
+import CoreLocation
 
 class MapViewController: UIViewController {
 
@@ -18,6 +19,7 @@ class MapViewController: UIViewController {
     // MARK: - Lifecycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
+        presenter?.viewDidLoad()
         setupNavigationBar()
         setupHierarchy()
         setupLayout()
@@ -31,7 +33,7 @@ class MapViewController: UIViewController {
         }
 
         mapView.mapYMK.mapWindow.map.move(
-            with: YMKCameraPosition.init(target: YMKPoint(latitude: 55.753921, longitude: 37.620709), zoom: 14, azimuth: 0, tilt: 0),
+            with: YMKCameraPosition.init(target: YMKPoint(latitude: 44.65, longitude: 44.85), zoom: 9, azimuth: 0, tilt: 0),
             animation: YMKAnimation(type: YMKAnimationType.smooth, duration: 2)
         )
 
@@ -58,5 +60,55 @@ class MapViewController: UIViewController {
 }
 
 extension MapViewController: MapViewProtocol{
-    // TODO: Implement View Output Methods
+
+    private func addPlacemark(_ map: YMKMap, cafe: LocationsModel) {
+        let image = UIImage(named: "coffe") ?? UIImage()
+        let placemark = map.mapObjects.addPlacemark()
+        placemark.geometry = YMKPoint(
+            latitude: Double(cafe.point.latitude) ?? 0,
+            longitude: Double(cafe.point.longitude) ?? 0
+        )
+        let iconStyle = YMKIconStyle()
+        iconStyle.scale = 0.6
+        placemark.setIconWith(image, style: iconStyle)
+        placemark.setTextWithText(
+            cafe.name,
+            style: YMKTextStyle(
+                size: 12,
+                color: CustomColors.brown,
+                outlineColor: .white,
+                placement: .bottom,
+                offset: 0.0,
+                offsetFromIcon: true,
+                textOptional: false)
+        )
+        placemark.addTapListener(with: self)
+    }
+
+    func addPoints(cafesList: [LocationsModel]) {
+        cafesList.forEach { cafe in
+            addPlacemark(
+                mapView.mapYMK.mapWindow.map,
+                cafe: cafe
+            )
+        }
+    }
+}
+
+extension MapViewController: YMKMapObjectTapListener {
+    func onMapObjectTap(with mapObject: YMKMapObject, point: YMKPoint) -> Bool {
+        guard let placamark = mapObject as? YMKPlacemarkMapObject else { return false }
+        self.focusOnPoint(placamark.geometry)
+
+        return true
+    }
+
+    func focusOnPoint(_ point: YMKPoint) {
+        mapView.mapYMK.mapWindow.map.move(
+            with: YMKCameraPosition(target: point, zoom: 9, azimuth: 0, tilt: 0),
+            animation: YMKAnimation(type: YMKAnimationType.smooth, duration: 1)
+        )
+    }
+
+
 }

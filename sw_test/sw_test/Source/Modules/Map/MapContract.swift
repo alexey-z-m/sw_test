@@ -9,7 +9,7 @@
 import Foundation
 
 protocol MapViewProtocol: AnyObject {
-
+    func addPoints(cafesList: [LocationsModel])
 }
 
 protocol MapPresenterProtocol {
@@ -17,11 +17,14 @@ protocol MapPresenterProtocol {
     var view: MapViewProtocol? { get set }
     var interactor: MapInteractorProtocol { get set }
     var router: MapRouterProtocol { get set }
+
+    func viewDidLoad()
 }
 
 protocol MapInteractorProtocol {
 
     var presenter: MapPresenterProtocol? { get set }
+    func getCafes() -> [LocationsModel]
 }
 
 protocol MapRouterProtocol {

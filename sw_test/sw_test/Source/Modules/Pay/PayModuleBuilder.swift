@@ -10,8 +10,8 @@ import UIKit
 
 class PayModuleBuilder {
 
-    static func build() -> UIViewController {
-        let interactor = PayInteractor()
+    static func build(orderedItems: [(item: MenuModel, count: Int)]) -> UIViewController {
+        let interactor = PayInteractor(orderedItems: orderedItems)
         let router = PayRouter()
         let presenter = PayPresenter(interactor: interactor, router: router)
         let viewController = PayViewController()
