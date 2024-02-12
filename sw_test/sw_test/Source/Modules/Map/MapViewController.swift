@@ -3,15 +3,17 @@
 //  sw_test
 //
 //  Created by Alexey Zablotskiy on 08.02.2024.
-//  
+//
 //
 
 import UIKit
+import YandexMapsMobile
 
 class MapViewController: UIViewController {
 
     // MARK: - Properties
     var presenter: MapPresenterProtocol?
+    lazy var mapView = MapView()
 
     // MARK: - Lifecycle Methods
     override func viewDidLoad() {
@@ -20,14 +22,23 @@ class MapViewController: UIViewController {
         setupHierarchy()
         setupLayout()
     }
-    
+
     //MARK: - Funcs
     func setupLayout() {
         view.backgroundColor = UIColor.white
+        mapView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
+
+        mapView.mapYMK.mapWindow.map.move(
+            with: YMKCameraPosition.init(target: YMKPoint(latitude: 55.753921, longitude: 37.620709), zoom: 14, azimuth: 0, tilt: 0),
+            animation: YMKAnimation(type: YMKAnimationType.smooth, duration: 2)
+        )
+
     }
 
     func setupHierarchy() {
-
+        view.addSubview(mapView)
     }
 
     func setupNavigationBar() {
