@@ -19,11 +19,17 @@ protocol MenuPresenterProtocol {
     var router: MenuRouterProtocol { get set }
 
     func pay()
+
+    func plusItem(item: MenuModel)
+    func minusItem(item: MenuModel)
 }
 
 protocol MenuInteractorProtocol {
 
     var presenter: MenuPresenterProtocol? { get set }
+
+    func plusItem(item: MenuModel)
+    func minusItem(item: MenuModel)
 }
 
 protocol MenuRouterProtocol {

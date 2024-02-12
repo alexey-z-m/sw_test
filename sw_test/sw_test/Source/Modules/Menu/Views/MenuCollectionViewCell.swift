@@ -10,6 +10,9 @@ import UIKit
 class MenuCollectionViewCell: UICollectionViewCell {
     static let identifier = "MenuCollectionViewCell"
 
+    weak var delegate: MenuPresenter?
+    var item: MenuModel?
+
     let cell: UIView = {
         let view = UIView()
         view.backgroundColor = UIColor.white
@@ -121,15 +124,27 @@ class MenuCollectionViewCell: UICollectionViewCell {
         fatalError()
     }
 
-    func configure() {
+    func configure(item: MenuModel) {
+        self.item = item
+        itemName.text = item.name
+        price.text = String(item.price)
         //backgroundColor = UIColor.red
     }
 
     @objc func minusButton() {
-        print("minus")
+        var count = Int(amount.text ?? "0") ?? 0
+        if count > 0 {
+            guard let item else { return }
+            delegate?.minusItem(item: item)
+            amount.text = String((Int(amount.text ?? "0") ?? 0) - 1)
+        } else {
+            amount.isEnabled = true
+        }
     }
 
     @objc func plusButton() {
-        print("plus")
+        guard let item else { return }
+        delegate?.plusItem(item: item)
+        amount.text = String((Int(amount.text ?? "0") ?? 0) + 1)
     }
 }

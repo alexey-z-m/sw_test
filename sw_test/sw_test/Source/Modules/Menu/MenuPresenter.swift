@@ -23,4 +23,11 @@ class MenuPresenter: MenuPresenterProtocol {
     func pay() {
         router.pay()
     }
+
+    func plusItem(item: MenuModel) {
+        interactor.plusItem(item: item)
+    }
+    func minusItem(item: MenuModel) {
+        interactor.minusItem(item: item)
+    }
 }

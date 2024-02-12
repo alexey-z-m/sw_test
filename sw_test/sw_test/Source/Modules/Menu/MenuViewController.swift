@@ -109,7 +109,7 @@ extension MenuViewController: UICollectionViewDataSource {
             return UICollectionViewCell()
         }
         //let model = model[indexPath.row]
-        cell.configure() //(cell: model)
+        cell.configure(item: MenuModel(id: 1, name: "булка", imageURL: "булка", price: 20.5)) //(cell: model)
         return cell
     }
 }
