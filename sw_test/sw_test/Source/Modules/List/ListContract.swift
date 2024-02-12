@@ -19,7 +19,7 @@ protocol ListPresenterProtocol {
     
     func viewDidLoad()
     func map()
-    func menu()
+    func menu(idCafe: Int)
 
 }
 
@@ -32,5 +32,5 @@ protocol ListInteractorProtocol {
 
 protocol ListRouterProtocol {
     func map()
-    func menu()
+    func menu(idCafe: Int)
 }

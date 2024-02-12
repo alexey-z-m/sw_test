@@ -10,8 +10,8 @@ import UIKit
 
 class MenuModuleBuilder {
 
-    static func build() -> UIViewController {
-        let interactor = MenuInteractor()
+    static func build(idCafe: Int) -> UIViewController {
+        let interactor = MenuInteractor(idCafe: idCafe)
         let router = MenuRouter()
         let presenter = MenuPresenter(interactor: interactor, router: router)
         let viewController = MenuViewController()

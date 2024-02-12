@@ -31,7 +31,7 @@ protocol MenuInteractorProtocol {
     var presenter: MenuPresenterProtocol? { get set }
     var orderedItems: [(item: MenuModel, count: Int)] { get }
 
-    func getMenu(id: String)
+    func getMenu()
 
     func plusItem(item: MenuModel)
     func minusItem(item: MenuModel)

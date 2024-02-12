@@ -28,7 +28,7 @@ class ListPresenter: ListPresenterProtocol {
         router.map()
     }
 
-    func menu() {
-        router.menu()
+    func menu(idCafe: Int) {
+        router.menu(idCafe: idCafe)
     }
 }

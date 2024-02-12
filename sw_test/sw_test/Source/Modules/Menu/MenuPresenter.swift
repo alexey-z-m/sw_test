@@ -21,7 +21,7 @@ class MenuPresenter: MenuPresenterProtocol {
     }
 
     func viewDidLoad() {
-        interactor.getMenu(id: "")
+        interactor.getMenu()
     }
 
     func pay() {

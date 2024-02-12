@@ -18,8 +18,8 @@ class ListRouter: ListRouterProtocol {
         viewController?.navigationController?.pushViewController(vc, animated: true)
     }
 
-    func menu() {
-        let vc = MenuModuleBuilder.build()
+    func menu(idCafe: Int) {
+        let vc = MenuModuleBuilder.build(idCafe: idCafe)
         viewController?.navigationController?.pushViewController(vc, animated: true)
     }
 }
