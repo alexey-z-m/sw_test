@@ -39,3 +39,9 @@ class ListPresenter: ListPresenterProtocol {
         router.menu(idCafe: idCafe)
     }
 }
+
+extension ListPresenter: ListCellDelegate {
+    func getDistanceSring(point: LocPointModel) -> String {
+        return interactor.getDistanceSring(point: point)
+    }
+}

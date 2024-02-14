@@ -10,6 +10,8 @@ import UIKit
 class ListTableViewCell: UITableViewCell {
     static let identifier = "ListTableViewCell"
 
+    weak var delegate: ListCellDelegate?
+
     let rectangle: UIView = {
         let view = UIView()
         view.backgroundColor = UIColor(red: 0.96, green: 0.9, blue: 0.82, alpha: 1)
@@ -69,7 +71,7 @@ class ListTableViewCell: UITableViewCell {
     func configure(cafe: LocationsModel?) {
         guard let cafe else { return }
         nameLabel.text = cafe.name
-
+        distanceLabel.text = delegate?.getDistanceSring(point: cafe.point)
     }
 
 }

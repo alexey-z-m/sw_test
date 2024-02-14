@@ -31,7 +31,6 @@ class MenuPresenter: MenuPresenterProtocol {
 
     func pay() {
         let orderedItems = interactor.menuItems.filter{ $0.count > 0 }
-        print(orderedItems)
         router.pay(orderedItems: orderedItems)
     }
 }

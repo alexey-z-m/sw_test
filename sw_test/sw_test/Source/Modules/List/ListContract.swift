@@ -13,7 +13,7 @@ protocol ListViewProtocol: AnyObject {
     var tableView: UITableView { get }
 }
 
-protocol ListPresenterProtocol {
+protocol ListPresenterProtocol: AnyObject, ListCellDelegate {
     var view: ListViewProtocol? { get set }
     var interactor: ListInteractorProtocol { get set }
     var router: ListRouterProtocol { get set }
@@ -29,9 +29,14 @@ protocol ListInteractorProtocol {
     var presenter: ListPresenterProtocol? { get set }
     var cafeList: [LocationsModel] { get }
     func getCafeList(completion: @escaping (Result<[LocationsModel],Error>) -> ()) 
+    func getDistanceSring(point: LocPointModel) -> String
 }
 
 protocol ListRouterProtocol {
     func map(cafeList: [LocationsModel])
     func menu(idCafe: Int)
+}
+
+protocol ListCellDelegate: AnyObject {
+    func getDistanceSring(point: LocPointModel) -> String
 }

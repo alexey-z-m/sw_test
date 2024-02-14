@@ -104,6 +104,7 @@ extension ListViewController: UITableViewDataSource {
         ) as? ListTableViewCell else {
             return UITableViewCell()
         }
+        cell.delegate = presenter
         cell.configure(cafe: presenter?.interactor.cafeList[indexPath.item])
         return cell
     }

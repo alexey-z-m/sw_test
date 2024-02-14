@@ -145,6 +145,7 @@ class MenuCollectionViewCell: UICollectionViewCell {
         imageItem.kf.setImage(with: url) { [weak self] _ in
             self?.activityIndicator.stopAnimating()
         }
+        
     }
 
     @objc func minusButton() {
