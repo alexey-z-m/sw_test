@@ -37,12 +37,42 @@ class PayTableViewCell: UITableViewCell {
         return label
     }()
 
+    lazy var minus: UIButton = {
+        let button = UIButton(type: .system)
+        button.setImage(UIImage(systemName: "minus"), for: .normal)
+        button.tintColor = CustomColors.brown
+        button.addTarget(self, action: #selector(minusButton), for: .touchUpInside)
+        return button
+    }()
+
+    let amount: UILabel = {
+        let label = UILabel()
+        label.text = "0"
+        label.textColor = CustomColors.brown
+        label.font = UIFont.systemFont(ofSize: 17, weight: .bold)
+        return label
+    }()
+
+    lazy var plus: UIButton = {
+        let button = UIButton(type: .system)
+        button.setImage(UIImage(systemName: "plus"), for: .normal)
+        button.tintColor = CustomColors.brown
+        button.addTarget(self, action: #selector(plusButton), for: .touchUpInside)
+        return button
+    }()
+
+    let stackAmount: UIStackView = {
+        let stack = UIStackView()
+        stack.axis = .horizontal
+        stack.spacing = 9
+        return stack
+    }()
+
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        setupHierarchy()
+        setupLayout()
         selectionStyle = .none
-        addSubview(rectangle)
-        rectangle.addSubview(nameLabel)
-        rectangle.addSubview(priceLabel)
 
         rectangle.snp.makeConstraints { make in
             make.leading.equalToSuperview().offset(10)
@@ -62,11 +92,52 @@ class PayTableViewCell: UITableViewCell {
         }
     }
 
+    private func setupHierarchy() {
+        addSubview(rectangle)
+        rectangle.addSubview(nameLabel)
+        rectangle.addSubview(priceLabel)
+        rectangle.addSubview(stackAmount)
+        stackAmount.addArrangedSubview(minus)
+        stackAmount.addArrangedSubview(amount)
+        stackAmount.addArrangedSubview(plus)
+    }
+    private func setupLayout() {
+        rectangle.snp.makeConstraints { make in
+            make.leading.equalToSuperview().offset(10)
+            make.trailing.equalToSuperview().offset(-16)
+            make.bottom.equalToSuperview()
+            make.top.equalToSuperview().offset(6)
+        }
+        nameLabel.snp.makeConstraints { make in
+            make.top.equalToSuperview().offset(14)
+            make.leading.equalToSuperview().offset(10)
+            make.trailing.equalToSuperview().inset(10)
+        }
+        priceLabel.snp.makeConstraints { make in
+            make.top.equalTo(nameLabel.snp.bottom).offset(6)
+            make.leading.equalToSuperview().offset(10)
+            make.trailing.equalToSuperview().inset(10)
+        }
+        stackAmount.snp.makeConstraints { make in
+            make.trailing.equalToSuperview().inset(11)
+            make.centerY.equalToSuperview()
+        }
+        
+    }
+
     required init?(coder: NSCoder) {
         fatalError()
     }
 
     func configure() {
+
+    }
+
+    @objc func minusButton() {
+
+    }
+    
+    @objc func plusButton() {
 
     }
 

@@ -17,4 +17,18 @@ class PayInteractor: PayInteractorProtocol {
     init(orderedItems: [(item: MenuModel, count: Int)]) {
         self.orderedItems = orderedItems
     }
+
+    func plusItem(item: MenuModel) {
+        if let index = orderedItems.firstIndex(where: { $0.item.id == item.id }) {
+            orderedItems[index].count += 1
+        }
+        print(orderedItems)
+    }
+
+    func minusItem(item: MenuModel) {
+        if let index = orderedItems.firstIndex(where: { $0.item.id == item.id }) {
+            orderedItems[index].count -= 1
+        }
+        print(orderedItems)
+    }
 }

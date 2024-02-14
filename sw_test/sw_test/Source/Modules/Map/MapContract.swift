@@ -19,6 +19,7 @@ protocol MapPresenterProtocol {
     var router: MapRouterProtocol { get set }
 
     func viewDidLoad()
+    func menu(idCafe: Int)
 }
 
 protocol MapInteractorProtocol {
@@ -28,5 +29,5 @@ protocol MapInteractorProtocol {
 }
 
 protocol MapRouterProtocol {
-
+    func menu(idCafe: Int)
 }

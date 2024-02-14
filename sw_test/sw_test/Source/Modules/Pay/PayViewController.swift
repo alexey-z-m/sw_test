@@ -31,7 +31,17 @@ class PayViewController: UIViewController {
         button.layer.cornerRadius = 23.5
         return button
     }()
-    
+
+    let label: UILabel = {
+        let label = UILabel()
+        label.numberOfLines = 4
+        label.text = "Время ожидания заказа\n 15 минут!\n Спасибо, что выбрали нас."
+        label.font = UIFont.systemFont(ofSize: 20, weight: .medium)
+        label.textColor = CustomColors.brown
+        label.textAlignment = .center
+        return label
+    }()
+
     // MARK: - Lifecycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,11 +67,16 @@ class PayViewController: UIViewController {
             make.bottom.equalToSuperview().inset(47)
             make.height.equalTo(47)
         }
+        label.snp.makeConstraints { make in
+            make.bottom.equalTo(button.snp.top).offset(-100)
+            make.centerX.equalToSuperview()
+        }
     }
     
     func setupHierarchy() {
         view.addSubview(tableView)
         view.addSubview(button)
+        view.addSubview(label)
     }
     
     func setupNavigationBar() {
@@ -74,7 +89,8 @@ class PayViewController: UIViewController {
             NSAttributedString.Key.foregroundColor: UIColor(red: 0.518, green: 0.388, blue: 0.251, alpha: 1)
         ]
         appearance.titleTextAttributes = titleAttribute
-        
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        navigationController?.navigationBar.tintColor = CustomColors.brown
         navigationController?.navigationBar.standardAppearance = appearance
         navigationController?.navigationBar.scrollEdgeAppearance = appearance
     }
@@ -82,7 +98,6 @@ class PayViewController: UIViewController {
     @objc func pay() {
         presenter?.pay()
     }
-
 
 }
 

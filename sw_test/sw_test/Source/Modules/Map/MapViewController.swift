@@ -53,7 +53,8 @@ class MapViewController: UIViewController {
             NSAttributedString.Key.foregroundColor: UIColor(red: 0.518, green: 0.388, blue: 0.251, alpha: 1)
         ]
         appearance.titleTextAttributes = titleAttribute
-
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        navigationController?.navigationBar.tintColor = CustomColors.brown
         navigationController?.navigationBar.standardAppearance = appearance
         navigationController?.navigationBar.scrollEdgeAppearance = appearance
     }
@@ -82,7 +83,9 @@ extension MapViewController: MapViewProtocol{
                 offsetFromIcon: true,
                 textOptional: false)
         )
+        placemark.userData = cafe.id
         placemark.addTapListener(with: self)
+
     }
 
     func addPoints(cafesList: [LocationsModel]) {
@@ -99,7 +102,10 @@ extension MapViewController: YMKMapObjectTapListener {
     func onMapObjectTap(with mapObject: YMKMapObject, point: YMKPoint) -> Bool {
         guard let placamark = mapObject as? YMKPlacemarkMapObject else { return false }
         self.focusOnPoint(placamark.geometry)
-
+        guard let id = placamark.userData as? Int else { return false }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            self.presenter?.menu(idCafe: id)
+        }
         return true
     }
 

@@ -13,8 +13,8 @@ protocol MenuViewProtocol: AnyObject {
     var collectionView: UICollectionView { get }
 }
 
-protocol MenuPresenterProtocol {
-    
+protocol MenuPresenterProtocol: AnyObject, ItemDelegate {
+
     var view: MenuViewProtocol? { get set }
     var interactor: MenuInteractorProtocol { get set }
     var router: MenuRouterProtocol { get set }

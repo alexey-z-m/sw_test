@@ -10,6 +10,11 @@ import Foundation
 import UIKit
 
 class MapRouter: MapRouterProtocol {
+    
+    func menu(idCafe: Int) {
+        let vc = MenuModuleBuilder.build(idCafe: idCafe)
+        viewController?.navigationController?.pushViewController(vc, animated: true)
+    }
 
     weak var viewController: MapViewController?
 

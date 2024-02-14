@@ -22,6 +22,4 @@ class MapInteractor: MapInteractorProtocol {
         return cafeList
     }
 
-    
-
 }

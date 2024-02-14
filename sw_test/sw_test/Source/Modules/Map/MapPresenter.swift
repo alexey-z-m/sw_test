@@ -23,4 +23,9 @@ class MapPresenter: MapPresenterProtocol {
     func viewDidLoad() {
         view?.addPoints(cafesList: interactor.getCafes())
     }
+
+    func menu(idCafe: Int) {
+        router.menu(idCafe: idCafe)
+    }
+
 }
