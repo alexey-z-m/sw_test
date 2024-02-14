@@ -16,14 +16,14 @@ class MenuInteractor: MenuInteractorProtocol {
 
     var presenter: MenuPresenterProtocol?
 
-    var orderedItems: [(item: MenuModel, count: Int)] = []
+    var menuItems: [ItemModel] = []
 
     func getMenu(completion: @escaping(Result<[MenuModel],Error>) -> ()) {
         Network.shared.getMenu(idCafe: idCafe) { [weak self] result in
             switch result {
             case .success(let menu):
                 menu.forEach { item in
-                    self?.orderedItems.append((item:item, count: 0))
+                    self?.menuItems.append(ItemModel(item: item, count: 0))
                 }
                 completion(.success(menu))
             case .failure(_): print("getMenu fail")
@@ -32,17 +32,15 @@ class MenuInteractor: MenuInteractorProtocol {
     }
 
     func plusItem(item: MenuModel) {
-        if let index = orderedItems.firstIndex(where: { $0.item.id == item.id }) {
-            orderedItems[index].count += 1
+        if let index = menuItems.firstIndex(where: { $0.item.id == item.id }) {
+            menuItems[index].count += 1
         }
-        print(orderedItems)
     }
 
     func minusItem(item: MenuModel) {
-        if let index = orderedItems.firstIndex(where: { $0.item.id == item.id }) {
-            orderedItems[index].count -= 1
+        if let index = menuItems.firstIndex(where: { $0.item.id == item.id }) {
+            menuItems[index].count -= 1
         }
-        print(orderedItems)
     }
 
 }

@@ -100,7 +100,7 @@ class MenuViewController: UIViewController {
 
 extension MenuViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        presenter?.interactor.orderedItems.count ?? 0
+        presenter?.interactor.menuItems.count ?? 0
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -110,8 +110,8 @@ extension MenuViewController: UICollectionViewDataSource {
         ) as? MenuCollectionViewCell else {
             return UICollectionViewCell()
         }
-        //let model = model[indexPath.row]
-        cell.configure(item: presenter?.interactor.orderedItems[indexPath.item].item) //(cell: model)
+        cell.configure(item: presenter?.interactor.menuItems[indexPath.item].item)
+        cell.delegate = presenter
         return cell
     }
 }
@@ -123,5 +123,5 @@ extension MenuViewController: UICollectionViewDelegate, UICollectionViewDelegate
 }
 
 extension MenuViewController: MenuViewProtocol{
-    // TODO: Implement View Output Methods
+    
 }

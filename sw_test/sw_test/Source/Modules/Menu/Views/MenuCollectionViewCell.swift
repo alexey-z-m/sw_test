@@ -153,8 +153,6 @@ class MenuCollectionViewCell: UICollectionViewCell {
             guard let item else { return }
             delegate?.minusItem(item: item)
             amount.text = String(count - 1)
-        } else {
-            amount.isEnabled = true
         }
     }
 

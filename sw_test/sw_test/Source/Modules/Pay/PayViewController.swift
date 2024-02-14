@@ -110,7 +110,13 @@ extension PayViewController: UITableViewDelegate {
 extension PayViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return presenter?.interactor.orderedItems.count ?? 0
+        var count = 0
+        presenter?.interactor.orderedItems.forEach{ item in
+            if item.count > 0 {
+                count += 1
+            }
+        }
+        return count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -120,7 +126,9 @@ extension PayViewController: UITableViewDataSource {
         ) as? PayTableViewCell else {
             return UITableViewCell()
         }
-        cell.configure()
+        guard let model = presenter?.interactor.orderedItems[indexPath.item] else { return UITableViewCell() }
+        cell.configure(model: model)
+        cell.delegate = presenter
         return cell
     }
 }

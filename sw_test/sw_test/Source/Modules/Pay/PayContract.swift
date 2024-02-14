@@ -12,8 +12,8 @@ protocol PayViewProtocol: AnyObject {
 
 }
 
-protocol PayPresenterProtocol {
-    
+protocol PayPresenterProtocol: AnyObject, ItemDelegate {
+
     var view: PayViewProtocol? { get set }
     var interactor: PayInteractorProtocol { get set }
     var router: PayRouterProtocol { get set }
@@ -24,9 +24,13 @@ protocol PayPresenterProtocol {
 protocol PayInteractorProtocol {
 
     var presenter: PayPresenterProtocol? { get set }
-    var orderedItems: [(item: MenuModel, count: Int)] { get }
+    var orderedItems: [ItemModel] { get }
+
+    func plusItem(item: MenuModel)
+    func minusItem(item: MenuModel)
 }
 
 protocol PayRouterProtocol {
     func pay()
 }
+

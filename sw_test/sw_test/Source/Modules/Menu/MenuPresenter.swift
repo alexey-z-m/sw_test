@@ -30,14 +30,15 @@ class MenuPresenter: MenuPresenterProtocol {
     }
 
     func pay() {
-        router.pay(orderedItems: interactor.orderedItems)
+        let orderedItems = interactor.menuItems.filter{ $0.count > 0 }
+        print(orderedItems)
+        router.pay(orderedItems: orderedItems)
     }
 }
 
 extension MenuPresenter: ItemDelegate {
 
     func plusItem(item: MenuModel) {
-        print("+++ presenter")
         interactor.plusItem(item: item)
     }
     func minusItem(item: MenuModel) {

@@ -27,7 +27,7 @@ protocol MenuPresenterProtocol: AnyObject, ItemDelegate {
 protocol MenuInteractorProtocol {
 
     var presenter: MenuPresenterProtocol? { get set }
-    var orderedItems: [(item: MenuModel, count: Int)] { get }
+    var menuItems: [ItemModel] { get }
 
     func getMenu(completion: @escaping(Result<[MenuModel],Error>) -> ())
 
@@ -36,7 +36,7 @@ protocol MenuInteractorProtocol {
 }
 
 protocol MenuRouterProtocol {
-    func pay(orderedItems: [(item: MenuModel, count: Int)])
+    func pay(orderedItems: [ItemModel])
 }
 
 protocol ItemDelegate: AnyObject {

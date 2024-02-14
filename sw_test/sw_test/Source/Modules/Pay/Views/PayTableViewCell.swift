@@ -10,6 +10,9 @@ import UIKit
 class PayTableViewCell: UITableViewCell {
     static let identifier = "PayTableViewCell"
 
+    weak var delegate: ItemDelegate?
+    var item: MenuModel?
+
     let rectangle: UIView = {
         let view = UIView()
         view.backgroundColor = UIColor(red: 0.96, green: 0.9, blue: 0.82, alpha: 1)
@@ -96,7 +99,7 @@ class PayTableViewCell: UITableViewCell {
         addSubview(rectangle)
         rectangle.addSubview(nameLabel)
         rectangle.addSubview(priceLabel)
-        rectangle.addSubview(stackAmount)
+        contentView.addSubview(stackAmount)
         stackAmount.addArrangedSubview(minus)
         stackAmount.addArrangedSubview(amount)
         stackAmount.addArrangedSubview(plus)
@@ -119,7 +122,7 @@ class PayTableViewCell: UITableViewCell {
             make.trailing.equalToSuperview().inset(10)
         }
         stackAmount.snp.makeConstraints { make in
-            make.trailing.equalToSuperview().inset(11)
+            make.trailing.equalToSuperview().offset(-30)
             make.centerY.equalToSuperview()
         }
         
@@ -129,16 +132,29 @@ class PayTableViewCell: UITableViewCell {
         fatalError()
     }
 
-    func configure() {
-
+    func configure(model: ItemModel) {
+        self.item = model.item
+        amount.text = String(model.count)
+        nameLabel.text = model.item.name
+        priceLabel.text = String(format: "%.2f", model.item.price * Double(model.count))
     }
 
     @objc func minusButton() {
-
+        let count = Int(amount.text ?? "0") ?? 0
+        if count > 0 {
+            guard let item else { return }
+            delegate?.minusItem(item: item)
+            amount.text = String(count - 1)
+            priceLabel.text = String(format: "%.2f", item.price * Double(count - 1))
+        }
     }
     
     @objc func plusButton() {
-
+        let count = Int(amount.text ?? "0") ?? 0
+        guard let item else { return }
+        delegate?.plusItem(item: item)
+        amount.text = String(count + 1)
+        priceLabel.text = String(format: "%.2f", item.price * Double(count + 1))
     }
 
 }

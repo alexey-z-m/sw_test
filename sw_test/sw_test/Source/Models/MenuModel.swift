@@ -13,3 +13,8 @@ struct MenuModel: Decodable, Hashable {
     let imageURL: String
     let price: Double
 }
+
+struct ItemModel: Decodable, Hashable {
+    let item: MenuModel
+    var count: Int
+}

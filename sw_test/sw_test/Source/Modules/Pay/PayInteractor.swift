@@ -12,9 +12,9 @@ class PayInteractor: PayInteractorProtocol {
 
     var presenter: PayPresenterProtocol?
 
-    var orderedItems: [(item: MenuModel, count: Int)]
+    var orderedItems: [ItemModel]
 
-    init(orderedItems: [(item: MenuModel, count: Int)]) {
+    init(orderedItems: [ItemModel]) {
         self.orderedItems = orderedItems
     }
 
@@ -22,13 +22,15 @@ class PayInteractor: PayInteractorProtocol {
         if let index = orderedItems.firstIndex(where: { $0.item.id == item.id }) {
             orderedItems[index].count += 1
         }
-        print(orderedItems)
     }
 
     func minusItem(item: MenuModel) {
         if let index = orderedItems.firstIndex(where: { $0.item.id == item.id }) {
             orderedItems[index].count -= 1
         }
-        print(orderedItems)
+    }
+
+    func fullPrice(price: Double, count: Int) -> String {
+        return String(format: "%.2f", price * Double(count))
     }
 }

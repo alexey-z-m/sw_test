@@ -13,7 +13,7 @@ class MenuRouter: MenuRouterProtocol {
 
     weak var viewController: MenuViewController?
 
-    func pay(orderedItems: [(item: MenuModel, count: Int)]) {
+    func pay(orderedItems: [ItemModel]) {
         let vc = PayModuleBuilder.build(orderedItems: orderedItems)
         viewController?.navigationController?.pushViewController(vc, animated: true)
     }

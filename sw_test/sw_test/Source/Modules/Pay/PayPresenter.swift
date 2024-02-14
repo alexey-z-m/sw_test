@@ -24,3 +24,15 @@ class PayPresenter: PayPresenterProtocol {
         router.pay()
     }
 }
+
+extension PayPresenter: ItemDelegate {
+    func plusItem(item: MenuModel) {
+        interactor.plusItem(item: item)
+    }
+    
+    func minusItem(item: MenuModel) {
+        interactor.minusItem(item: item)
+    }
+    
+    
+}
